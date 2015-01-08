@@ -1,0 +1,42 @@
+/* What Are we ?  */
+_______________________________________________________________________________
+
+  We are a team of Hackers, Enterprenuers and Developers who have decided to
+  to get creative and start hacking around.
+
+
+/* Team */
+_______________________________________________________________________________
+
+  Name       :   Subho ( Sunny )
+  Twitter    :   @sunnyrockzzs
+  Site       :   http://subho.me
+  
+  Name       :   Harshit ( Ladoo )
+  Twitter    :   @harshwebweaver
+  Site       :   http://in.linkedin.com/in/agarwalharshit
+
+  Name       :   Prateek ( Panda )
+  Twitter    :   @prateekpanda
+  Site       :   http://thetechpanda.com/
+
+  Name       :   Manju ( pass2Rahul )
+  Twitter    :   @mssrahul
+  Site       :   https://www.facebook.com/mssrahul
+
+  Name       :   dhilipsiva
+  Twitter    :   @dhilipsiva
+  Site       :   http://dhilipsiva.com
+ 
+
+  When you see us with a backpack, and MacBooks you should be afraid
+  RUN before we hack ...
+
+
+/* Site */
+
+  URL            : https://www.appknox.in
+  Standards      : HTML, CSS
+  Components     : jQuery, bootstrap
+  Software       : sublime, nginx, mysql, python, javascript, node, docker, mongo
+

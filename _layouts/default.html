@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
+<html class="no-js">
+    {% include head.html %}
+    <body>
+        {% include header.html %}
+        <div class="main-container">
+            {{ content }}
+        </div>
+        <div class="footer-container">
+            {% include footer.html %}
+        </div>
+        <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.plugin.min.js"></script>
+        <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.flexslider-min.js"></script>
+        <script type="text/javascript" src="/assets/js/smooth-scroll.min.js"></script>
+        <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
+        <script type="text/javascript" src="/assets/js/spectragram.min.js"></script>
+        <script type="text/javascript" src="/assets/js/scrollReveal.min.js"></script>
+        <script type="text/javascript" src="/assets/js/isotope.min.js"></script>
+        <script type="text/javascript" src="/assets/js/twitterFetcher_v10_min.js"></script>
+        <script type="text/javascript" src="/assets/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.countdown.min.js"></script>
+        <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.simple-text-rotator.min.js"></script>
+        <script type="text/javascript" src="/assets/js/scripts.js"></script>
+        {{ page.addtional_scripts }}
+    </body>
 </html>

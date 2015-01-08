@@ -1,12 +1,50 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }} - {{page.title}}</title>
+    <!-- <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}"> -->
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <meta name="apple-mobile-web-app-title" content="Appknox">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="application-name" content="Appknox">
+    <meta name="description" content="AppKnox, security as a service for mobile apps that prevents embarrassing data leaks and stops security breaches by detecting vulnerabilities"/>
+    <meta name="keywords" content="appknox, xysec, xysecurity, xysec labs, subho halder, harshit agarwal" />
+    <meta name="copyright" content="2014, XySec Labs" />
+    <!-- for Facebook -->
+    <meta property="og:title" content="Appknox - By XYSec Labs" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="/assets/img/appknox-fb.png" />
+    <meta property="og:url" content="https://www.appknox.com/" />
+    <meta property="og:description" content="Appknox, security as a service for mobile apps that prevents embarrassing data leaks and stops security breaches by detecting vulnerabilities" />
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Appknox - By XYSec Labs" />
+    <meta name="twitter:description" content="Appknox, security as a service for mobile apps that prevents embarrassing data leaks and stops security breaches by detecting vulnerabilities" />
+    <meta name="twitter:image" content="/assets/img/appknox-fb.png" />
+    <!-- CSS from here -->
+    <link href="/assets/css/flexslider.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/assets/css/line-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/assets/css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/assets/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/assets/css/theme-rocklobster.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
+    <script src="/assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
