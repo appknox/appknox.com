@@ -278,6 +278,7 @@ $(document).ready(function(){
                             thisForm.find('.signup-appstore-field').fadeOut(500);
                             thisForm.find('.signup-email-field').fadeOut(500);
                             thisForm.find('.submit-button-field').fadeOut(500);
+                            thisForm.find('.form-error').fadeOut(500);
                             thisForm.find('.signup-done').fadeIn(1000);
                         
                     } else {
