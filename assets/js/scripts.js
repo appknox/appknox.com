@@ -267,7 +267,7 @@ $(document).ready(function(){
         } else {
             jQuery.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8000/webfrontend/homepage",
+                url: "http://staging.appknox.com/webfrontend/homepage",
                 crossDomain: true,
                 data: thisForm.serialize(),
                 complete: function (res, status) {
