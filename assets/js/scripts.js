@@ -267,7 +267,7 @@ $(document).ready(function(){
         } else {
             jQuery.ajax({
                 type: "POST",
-                url: "http://staging.appknox.com/webfrontend/homepage",
+                url: "http://127.0.0.1:8000/webfrontend/homepage",
                 crossDomain: true,
                 data: thisForm.serialize(),
                 complete: function (res, status) {
@@ -285,7 +285,7 @@ $(document).ready(function(){
                         thisForm.find('.submit-button-field').each(function(){
                             this.disabled = false;
                         })
-                        thisForm.find('.form-error').text(response['message']).fadeIn(1000);
+                        thisForm.find('.form-error').prepend(response['message']).fadeIn(1000);
                     }
                 }
             });
