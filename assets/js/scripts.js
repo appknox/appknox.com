@@ -267,7 +267,7 @@ $(document).ready(function(){
         } else {
             jQuery.ajax({
                 type: "POST",
-                url: "http://staging.appknox.com/webfrontend/homepage",
+                url: "https://beta.appknox.com/webfrontend/homepage",
                 crossDomain: true,
                 data: thisForm.serialize(),
                 complete: function (res, status) {
@@ -385,7 +385,7 @@ $(document).ready(function(){
         else{
             jQuery.ajax({
                 type: "POST",
-                url: "http://staging.appknox.com/webfrontend/contact_us",
+                url: "https://beta.appknox.com/webfrontend/contact_us",
                 crossDomain: true,
                 data: thisForm.serialize(),
                 complete: function (result, status) {
