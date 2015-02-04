@@ -282,10 +282,8 @@ $(document).ready(function(){
                             thisForm.find('.signup-done').fadeIn(1000);
                         
                     } else {
-                        thisForm.find('.submit-button-field').each(function(){
-                            this.disabled = false;
-                        })
-                        thisForm.find('.form-error').empty().prepend(response['message']).fadeIn(1000);
+                        thisForm.find('.form-error').prepend(response['message']).fadeIn(1000);
+                        setTimeout(function(){ window.location.reload() }, 4000);
                     }
                 }
             });
