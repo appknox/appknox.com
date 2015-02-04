@@ -285,7 +285,7 @@ $(document).ready(function(){
                         thisForm.find('.submit-button-field').each(function(){
                             this.disabled = false;
                         })
-                        thisForm.find('.form-error').prepend(response['message']).fadeIn(1000);
+                        thisForm.find('.form-error').empty().prepend(response['message']).fadeIn(1000);
                     }
                 }
             });
@@ -321,21 +321,20 @@ $(document).ready(function(){
         } else {
             jQuery.ajax({
                 type: "POST",
-                url: "subscribe",
+                url: "https://beta.appknox.com/webfrontend/subscribe",
                 data: thisForm.serialize(),
-                success: function (response) {
+                complete: function (res, status) {
                     // Swiftmailer always sends back a number representing numner of emails sent.
                     // If this is numeric (not Swift Mailer error text) AND greater than 0 then show success message.
-                    if($.isNumeric(response)){
-                        if(parseInt(response) > 0){
-                            thisForm.find('.subscribe-email-field').attr("disabled", true) ;
-                            thisForm.find('.subscribe-email-field').val("Thank you for subscribing !");
-                        }
+                    var response = JSON.parse(res.responseText)
+                    if(response['status'] == 'success'){
+                        thisForm.find('.subscribe-email-field').attr("disabled", true) ;
+                        thisForm.find('.subscribe-email-field').val("Thank you for subscribing !");
                     } else {
                         thisForm.find('.submit-button-field').each(function(){
                             this.disabled = false;
                         })
-                        thisForm.find('.subscribe-email-field').val(response);
+                        thisForm.find('.subscribe-email-field').val(response['message']);
                     }
                 }
             });
