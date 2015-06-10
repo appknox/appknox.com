@@ -47,7 +47,7 @@ _______________________________________________________________________________
 
 /* Site */
 
-  URL            : https://www.appknox.in
+  URL            : https://www.appknox.com
   Standards      : HTML, CSS
   Components     : jQuery, bootstrap
   Software       : sublime, nginx, mysql, python, javascript, node, docker, mongo
