@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /ghost/
-
-Sitemap: https://www.appknox.com/sitemap.xml
-Sitemap: https://blog.appknox.com/sitemap.xml.gz
-
