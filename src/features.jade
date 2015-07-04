@@ -1,0 +1,143 @@
+---
+layout: default
+title: Features
+permalink: /features/
+---
+html
+  body
+    section.image-divider.overlay.duplicatable-content
+      .background-image-holder.parallax-background
+        img.background-image(alt='Background Image', src='/assets/img/hero14.jpg')
+      .container
+        .row
+          .col-sm-8.col-sm-offset-2.text-center(data-scroll-reveal='enter top')
+            span.text-white.alt-font
+            h1.text-white How Appknox Works
+        .row
+          .col-sm-4
+            .feature.feature-icon-large(data-scroll-reveal='enter left', align='center')
+              i.text-white.icon.icon-notebook
+              h5.text-white Code Analysis
+              p.text-white
+                | Code analysis covers basic coding practices, data flow and metrics which include OWASP configurations.
+          .col-sm-4
+            .feature.feature-icon-large(data-scroll-reveal='enter bottom', align='center')
+              i.text-white.icon.icon-genius
+              h5.text-white Attacker's Approach
+              p.text-white
+                | Going a step further and using an attacker's approach to analyze your Network and Product's security.
+          .col-sm-4
+            .feature.feature-icon-large(data-scroll-reveal='enter right', align='center')
+              i.text-white.icon.icon-gift
+              h5.text-white Easy Remediation
+              p.text-white
+                | Each vulnerability which is detected is prioritized according to its severity and impact.
+    section.product-right
+      .background-image-holder
+        img.background-image(alt='Background Image', src='/assets/img/grey-bg.jpg')
+      .container.align-vertical
+        .row
+          .col-md-5.col-sm-6
+            h1 Appknox Dashboard gives a quick insight about your App
+            p.lead
+              | Dashboard gives you details on the security issues in your mobile application and also suggests possible methods for remediation. A downloadable PDF report is generated which gives detailed insights about security vulnerabilities discovered.
+            a.btn.btn-primary.btn-filled(href='/contact') Contact Us to Know More
+      .product-image(data-scroll-reveal='enter right and move 100px')
+        img(alt='Product Image', src='/assets/img/browser.png')
+    section.duplicatable-content.milestones
+      .container
+        .row
+          .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.text-center
+            h1 Features
+            p.lead
+              | We at Appknox believe in hacking your app before anyone else does. To ensure this we provide multiple level of scans and support all major platforms.
+        .row
+          .col-md-3.col-sm-6.text-center(data-scroll-reveal='enter left')
+            .feature.feature-icon-large
+              i.icon.icon-notebook
+              .pin-body
+              .pin-head
+              h5 Static Analysis
+              span Provides results in less than 5 minutes
+          .col-md-3.col-sm-6.text-center(data-scroll-reveal='enter left')
+            .feature.feature-icon-large
+              i.icon.icon-linegraph
+              .pin-body
+              .pin-head
+              h5 Dynamic Analysis
+              span Realtime results along with user interaction
+          .col-md-3.col-sm-6.text-center(data-scroll-reveal='enter right')
+            .feature.feature-icon-large
+              i.icon.icon-ribbon
+              .pin-body
+              .pin-head
+              h5 Behavorial Analysis
+              span More than 85% code coverage with accurate results
+          .col-md-3.col-sm-6.text-center(data-scroll-reveal='enter right')
+            .feature.feature-icon-large
+              i.icon.icon-layers
+              .pin-body
+              .pin-head
+              h5 Multiple Platform
+              span Supports both Android and iOS platforms
+    section.feature-selector
+      .container
+        .row
+          ul.selector-tabs.clearfix
+            li.clearfix.text-primary.col-md-3.col-sm-6.active
+              i.icon.icon-gears
+              span Automation
+            li.clearfix.text-primary.col-md-3.col-sm-6
+              i.icon.icon-target
+              span New Threats
+            li.clearfix.text-primary.col-md-3.col-sm-6
+              i.icon.icon-documents
+              span Reporting
+            li.clearfix.text-primary.col-md-3.col-sm-6
+              i.icon.icon-shield
+              span Security
+      .container
+        ul.selector-content
+          li.clearfix.active
+            .row
+              .col-sm-12.text-center
+                h1 Security Automation
+            .row
+              .col-sm-12
+                p.lead
+                  | Appknox is a completely automated tool with Continuous Integration. Developers prefer not to operate another standalone tool for security because it adds complexity to their already messy job. Continuous Integration test makes their life easier and reduces friction in adoption, removing complexity and the need of experience in security for their job.
+          li.clearfix
+            .row
+              .col-sm-12.text-center
+                h1 New threats on the loose? You are covered
+            .row
+              .col-sm-12
+                p.lead
+                  | Appknox updates any new threat within 24 hours. Our scanner is self learning – updates triggered by one app or new threat will benefit all other apps in the system. This will enable everyone to keep up-to-date with all the new threats which are discovered and also checks if the application is vulnerable to this new threat.
+          li.clearfix
+            .row
+              .col-sm-12.text-center
+                h1 Threat Reporting seems easier now
+            .row
+              .col-sm-12
+                p.lead
+                  | Users receive automated reports including a score card of vulnerabilities, ranked by severity. This report includes helpful suggestions for developers, and threat scenarios for managers. A continuous scoring system helps app developers maintain good coding practices thus assuring a high quality of code. Report contains almost no false negatives and false positives, thus reducing the time wastage for developers.
+          li.clearfix
+            .row
+              .col-sm-12.text-center
+                h1 The core vision of Security
+            .row
+              .col-sm-12
+                p.lead
+                  | Malware may be the oldest and most famous problem in security, but it is not the only one. Data loss prevention, snooping, and man-in-the-middle content and code injection are just as prevalent and dangerous. Appknox focuses on those and provides a better platform for developers to maintain best security practises. Appknox is not an antivirus company.
+    section.strip.bg-primary
+      .container
+        .row.clearfix
+          form.mail-list-subscribe
+            .col-sm-9.col-xs-12.pull-left.clear-fix
+              h3.text-white.pull-left
+                strong Get Notified. 
+              input.subscribe-email-field.validate-required.validate-email(type='email', name='email', placeholder='Enter your email here')
+            .col-sm-3.col-xs-12.pull-right.text-right
+              input.submit-button-field.btn.btn-primary.btn-filled(type='submit', value='Subscribe')
+      iframe.mail-list-form(srcdoc='')
