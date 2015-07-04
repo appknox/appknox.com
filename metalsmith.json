@@ -4,9 +4,10 @@
         "description": "Yiopep"
     },
     "plugins": {
+        "metalsmith-coffee": {},
         "metalsmith-watch": {
             "paths": {
-                "${source}/**/*": true
+                "${source}/**/*": "**/*"
             },
             "livereload": true
         },
