@@ -16,6 +16,7 @@
         "metalsmith-permalinks": {
             "pattern": ":title"
         },
+        "metalsmith-html-minifier": {},
         "metalsmith-serve": {
             "port": 8081,
             "verbose": true
