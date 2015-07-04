@@ -14,9 +14,15 @@ var metalsmith = require('metalsmith')
   , htmlMinifier = require("metalsmith-html-minifier")
   , serve = require('metalsmith-serve')
   , concat = require('metalsmith-concat')
+  , compress = require('metalsmith-gzip')
+  , fingerprint = require('metalsmith-fingerprint')
+  , markdown   = require('metalsmith-markdown')
+  , include  = require('metalsmith-include')
+  , templates  = require('metalsmith-templates')
 ;
 
 metalsmith(__dirname)
+.use(include())
 .use(
   watch({
     paths: {
@@ -41,6 +47,7 @@ metalsmith(__dirname)
 .use(
   htmlMinifier()
 )
+.use(compress())
 .use(
   serve({
     port: 8081,
