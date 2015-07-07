@@ -19,6 +19,7 @@ var metalsmith = require('metalsmith')
   , markdown   = require('metalsmith-markdown')
   , include  = require('metalsmith-include')
   , templates  = require('metalsmith-templates')
+  , less = require('metalsmith-less')
 ;
 
 metalsmith(__dirname)
@@ -44,6 +45,7 @@ metalsmith(__dirname)
 .use(
   coffee()
 )
+.use(less())
 .use(
   htmlMinifier()
 )
@@ -56,6 +58,9 @@ metalsmith(__dirname)
 )
 .build(
   function(err) {
-    if (err) throw err;
+    if (err) {
+      console.log(err.stack);
+      throw err;
+    }
   }
 );
