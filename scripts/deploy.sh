@@ -16,4 +16,4 @@
 #
 
 jekyll build
-aws s3 sync _site/ s3://appknox.com/ --acl public-read
+aws s3 sync _site/ s3://www.appknox.com/ --acl public-read
