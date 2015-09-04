@@ -9,6 +9,6 @@ $(".signup").backstretch([
 $(".rotate").textrotator({
   animation: "dissolve",
   separator: ",",
-  speed: 3000
+  speed: 5000
 });
 
