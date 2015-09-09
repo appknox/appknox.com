@@ -431,7 +431,7 @@ $(document).ready(function(){
         }
         $.ajax({
             type: "POST",
-            url: "http://localhost:8000/" + secretEl.val(),
+            url: "https://beta.appknox.com/" + secretEl.val(),
             crossDomain: true,
             data: data,
             complete: function (result, status) {
