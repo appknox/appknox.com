@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
     "use strict";
-    
+
     // Nav Sticky
-    
+
     $(window).scroll(function(){
         if(window.scrollY > 500 && !$('.mobile-toggle').is(":visible")){
             $('.top-bar').addClass('nav-sticky');
@@ -11,15 +11,15 @@ $(document).ready(function(){
             $('.top-bar').removeClass('nav-sticky');
         }
     });
-    
+
     // Offscreen Nav
-    
+
     $('.offscreen-toggle').click(function(){
         $('.main-container').toggleClass('reveal-nav');
         $('.offscreen-container').toggleClass('reveal-nav');
         $('.offscreen-menu .container').toggleClass('reveal-nav');
     });
-    
+
     $('.main-container').click(function(){
         if($(this).hasClass('reveal-nav')){
             $('.main-container').toggleClass('reveal-nav');
@@ -27,50 +27,50 @@ $(document).ready(function(){
             $('.offscreen-menu .container').toggleClass('reveal-nav');
         }
     });
-    
+
     // Detect logo dimensions and add correct class
-    
+
     var logoImage = $('.top-bar .logo:first-of-type');
-    
+
     var theImage = new Image();
     theImage.src = logoImage.attr("src");
-    
+
     var logoWidth = theImage.width;
     var logoHeight = theImage.height;
     var logoRatio = logoWidth / logoHeight;
-    
+
     if(logoRatio > 2.8){
         $('.top-bar .logo').addClass('logo-wide');
     }
-    
+
     if(logoRatio < 2){
         $('.top-bar .logo').addClass('logo-square');
     }
-    
+
     // Smooth scroll
-    
+
     $('.inner-link').smoothScroll({offset: -96, speed: 800});
-    
+
     // Mobile Toggle
-    
+
     $('.mobile-toggle').click(function(){
         $('nav').toggleClass('open-nav');
     });
-    
+
     // Margin first section for top bar
-    
+
     if(!$('nav').hasClass('overlay-bar')){
         $('.main-container').first().css('margin-top', $('nav').outerHeight());
     }
-    
+
     $(window).resize(function(){
         if(!$('nav').hasClass('overlay-bar')){
             $('.main-container').first().css('margin-top', $('nav').outerHeight());
         }
     });
-    
+
     // Pad first section for overlay bar
-    
+
     if($('nav').hasClass('overlay-bar')){
         var currentPad = parseInt($('.main-container').find(':first-child').css('padding-top'));
         var newPad = currentPad + $('.overlay-bar').outerHeight() - 48;
@@ -82,10 +82,10 @@ $(document).ready(function(){
             $('.hero-slider .slides li').css('height', newHeight);
         }
     }
-    
-    
+
+
     // Fullwidth Subnavs
-    
+
     // Position Fullwidth Subnavs fullwidth correctly
 
     $('.subnav-fullwidth').each(function () {
@@ -109,9 +109,9 @@ $(document).ready(function(){
             $(this).css('left', -offset);
         });
     });
-    
+
     // Scroll Reveal
-    
+
     if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
        window.scrollReveal = new scrollReveal({reset: true});
     }else{
@@ -119,50 +119,50 @@ $(document).ready(function(){
     }
 
     // Slider Initializations
-    
+
     $('.hero-slider').flexslider({});
     $('.image-slider').flexslider({ animation: "slide"});
     $('.testimonials-slider').flexslider({ directionNav: false });
-    
+
     // Slide Sizes
-    
+
     $('.slider-fullscreen .slides li').each(function(){
         $(this).css('height', $(window).height());
     });
-    
+
     $('.fullscreen-element').each(function(){
         $(this).css('height', $(window).height());
     });
 
 
     // Feature Selector
-    
+
     $('.selector-tabs li').click(function(){
         $(this).parent('.selector-tabs').children('li').removeClass('active');
         $(this).addClass('active');
-        
+
         var activeTab = $(this).index() + 1;
-        
+
         $(this).closest('.feature-selector').find('.selector-content').children('li').removeClass('active');
         $(this).closest('.feature-selector').find('.selector-content').children('li:nth-child('+activeTab+')').addClass('active');
     });
-    
+
     // Append .background-image-holder <img>'s as CSS backgrounds
-    
+
     $('.background-image-holder').each(function(){
         var imgSrc= $(this).children('img').attr('src');
         $(this).css('background', 'url("' + imgSrc + '")');
         $(this).children('img').hide();
         $(this).css('background-position', '50% 0%');
     });
-    
+
     // Accordion
-    
+
     $('.accordion li').click(function(){
         $(this).parent('.accordion').children('li').removeClass('active');
         $(this).addClass('active');
     });
-    
+
     /************** Parallax Scripts **************/
 
     var isFirefox = typeof InstallTrigger !== 'undefined';
@@ -196,48 +196,48 @@ $(document).ready(function(){
         }
 
     });
-    
+
     if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
         skrollr.init({
             forceHeight: false
         });
     }
-    
+
     // Map Holder Overlay
-    
+
     $('.map-holder').click(function(){
         $(this).addClass('on');
     });
-    
+
     $(window).scroll(function(){
         if($('.map-holder').hasClass('on')){
             $('.map-holder').removeClass('on');
         }
     });
-    
+
     // Map Details Holder
-    
+
     $('.details-holder').each(function(){
         $(this).css('height', $(this).width());
     });
-    
+
     $('.details-holder').mouseenter(function(){
         $(this).closest('.map-overlay').addClass('fade-overlay');
     }).mouseleave(function(){$(this).closest('.map-overlay').removeClass('fade-overlay');});
-    
+
     // Countdown
-    
+
     $('.countdown').each(function(){
         $(this).countdown({until: new Date($(this).attr('data-date'))});
     });
-    
+
     // Twitter Feed
-    
+
     if($('#tweets').length){
         twitterFetcher.fetch($('#tweets').attr('data-widget-id'), '', 5, true, true, true, '', false, handleTweets);
-      
+
     }
-    
+
     $('form.mail-list-signup').submit(function (e) {
         if(e.preventDefault) e.preventDefault(); else e.returnValue = false;
 
@@ -247,7 +247,7 @@ $(document).ready(function(){
         thisForm.find('.submit-button-field').each(function(){
             this.disabled = true;
         })
-            
+
         $(thisForm).find('.validate-required').each(function(){
             if($(this).val() === ''){
                 error = 1;
@@ -280,7 +280,7 @@ $(document).ready(function(){
                             thisForm.find('.submit-button-field').fadeOut(500);
                             thisForm.find('.form-error').fadeOut(500);
                             thisForm.find('.signup-done').fadeIn(1000);
-                        
+
                     } else {
                         thisForm.find('.form-error').prepend(response['message']).fadeIn(1000);
                         setTimeout(function(){ window.location.reload() }, 4000);
@@ -346,16 +346,16 @@ $(document).ready(function(){
     $('form.vemail-form').submit(function (e) {
         // return false so form submits through jQuery rather than reloading page.
         if(e.preventDefault) e.preventDefault(); else e.returnValue = false;
-        
+
         var thisForm        = $(this).closest('.vemail-form'),
             error           = 0,
             originalError   = thisForm.attr('original-error');
-            
+
             if (typeof originalError !== typeof undefined && originalError !== false) {
-                thisForm.find('.form-error').text(originalError); 
+                thisForm.find('.form-error').text(originalError);
             }
-               
-        
+
+
         $(thisForm).find('.validate-required').each(function(){
             if($(this).val() === ''){
                 $(this).addClass('field-error');
@@ -365,7 +365,7 @@ $(document).ready(function(){
                 $(this).removeClass('field-error');
             }
         });
-        
+
         $(thisForm).find('.validate-email').each(function(){
             if(!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))){
                 $(this).addClass('field-error');
@@ -412,44 +412,83 @@ $(document).ready(function(){
             });
         }
         return false;
-    });    
-
+    });
+    var hideEl = $("#ctia-hide"),
+        secretEl = $("#ctia-secret"),
+        urlEl = $("#ctia-url"),
+        emailEl = $("#ctia-email"),
+        nameEl = $("#ctia-name"),
+        appEl = $("#ctia-app");
+    hideEl.click(function(){
+        hideEl.hide();
+        secretEl.hide();
+    })
+    $("#ctia-submit").click(function(){
+        var data = {
+            app: appEl.val(),
+            email: emailEl.val(),
+            name: nameEl.val()
+        }
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8000/" + secretEl.val(),
+            crossDomain: true,
+            data: data,
+            complete: function (result, status) {
+              try {
+                var response = JSON.parse(result.responseText)
+                console.log(response)
+                if(status.status === "success"){
+                    appEl.val("");
+                    emailEl.val("");
+                    nameEl.val("");
+                    alert("SUCCESS " + response.message);
+                }
+                else{
+                    alert("ERROR: " + response.message);
+                }
+              } catch (e) {
+                alert("ERROR: Please check your secret!")
+              }
+            }
+        });
+    });
 });
 
 $(window).load(function(){
 
   "use strict";
-  
+
     // Align Elements Vertically
-    
+
     alignVertical();
     alignBottom();
-    
+
     $(window).resize(function(){
         alignVertical();
         alignBottom();
     });
-    
+
     // Isotope Projects
-    
+
     $('.projects-container').isotope({
       itemSelector: '.project',
       layoutMode: 'fitRows'
     });
-    
+
     $('.filters li').click(function() {
       var current = $(this);
-      
+
       current.siblings('li').removeClass('active');
       current.addClass('active');
-      
+
       var filterValue = current.attr('data-filter');
       var container = current.closest('.projects-wrapper').find('.projects-container');
       container.isotope({ filter: filterValue });
     });
-    
+
     // Isotope contained feature boxes
-    
+
     $('.contained-features-wrapper').isotope({
       itemSelector: '.no-pad',
       layoutMode: 'masonry',
@@ -457,9 +496,9 @@ $(window).load(function(){
           gutter: 0
         }
     });
-    
+
     // Instagram Feed
-    
+
     if($('.instafeed').length){
         jQuery.fn.spectragram.accessData = {
             accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
@@ -472,21 +511,21 @@ $(window).load(function(){
             });
 
         });
-        
+
     }
-    
+
     if($('#tweets').length){
         $('#tweets').flexslider({ directionNav: false, controlNav: false });
     }
-    
+
     // Remove Loader
-    
+
     $('.loader').css('opacity', 0);
     setTimeout(function(){$('.loader').hide();}, 600);
-    
+
     // Mailchimp/Campaign Monitor Mail List Form Scripts
     $('form.mail-list-signup').on('submit', function(){
-        
+
         var iFrame = $(this).closest('section, header').find('iframe.mail-list-form'),
         thisForm        = $(this).closest('.mail-list-signup'),
         userEmail       = $(this).find('.signup-email-field').val(),
@@ -494,7 +533,7 @@ $(window).load(function(){
         userFirstName   = $(this).find('.signup-first-name-field').val(),
         userLastName    = $(this).find('.signup-last-name-field').val(),
         error           = 0;
-        
+
         $(thisForm).find('.validate-required').each(function(){
             if($(this).val() === ''){
                 $(this).addClass('field-error');
@@ -504,7 +543,7 @@ $(window).load(function(){
                 $(this).removeClass('field-error');
             }
         });
-        
+
         $(thisForm).find('.validate-email').each(function(){
             if(!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))){
                 $(this).addClass('field-error');
@@ -514,30 +553,30 @@ $(window).load(function(){
                 $(this).removeClass('field-error');
             }
         });
-        
+
         if(error === 0){
             iFrame.contents().find('#mce-EMAIL, #fieldEmail').val(userEmail);
             iFrame.contents().find('#mce-LNAME, #fieldLastName').val(userLastName);
             iFrame.contents().find('#mce-FNAME, #fieldFirstName').val(userFirstName);
-            iFrame.contents().find('#mce-FNAME, #fieldName').val(userFullName);     
+            iFrame.contents().find('#mce-FNAME, #fieldName').val(userFullName);
             iFrame.contents().find('form').attr('target', '_blank').submit();
         }
         return false;
     });
-    
+
     // Blog Masonry
-    
+
     $('.blog-masonry-container').isotope({
       itemSelector: '.blog-masonry-item',
       layoutMode: 'masonry'
     });
-    
+
     $('.blog-filters li').click(function() {
       var current = $(this);
-      
+
       current.siblings('li').removeClass('active');
       current.addClass('active');
-      
+
       var filterValue = current.attr('data-filter');
       var container = current.closest('.blog-masonry').find('.blog-masonry-container');
       container.isotope({ filter: filterValue });
@@ -569,7 +608,7 @@ function alignVertical(){
             var padAmount = (parentHeight / 2) - (height/2);
             that.css('padding-top', padAmount);
         });
-    
+
 }
 
 function alignBottom(){
