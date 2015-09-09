@@ -438,7 +438,7 @@ $(document).ready(function(){
               try {
                 var response = JSON.parse(result.responseText)
                 console.log(response)
-                if(status.status === "success"){
+                if(response.status == "success"){
                     appEl.val("");
                     emailEl.val("");
                     nameEl.val("");
