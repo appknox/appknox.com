@@ -447,6 +447,7 @@ $(document).ready(function(){
                     nameEl.val("");
                     websiteEl.val("");
                     phoneEl.val("");
+                    $("#gmic-form").css("visibility", "hidden");
                     alert("SUCCESS " + response.message);
                 }
                 else{
