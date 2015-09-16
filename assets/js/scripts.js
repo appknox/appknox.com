@@ -427,11 +427,12 @@ $(document).ready(function(){
         var data = {
             app: appEl.val(),
             email: emailEl.val(),
-            name: nameEl.val()
+            name: nameEl.val(),
+            uuid: secretEl.val()
         }
         $.ajax({
             type: "POST",
-            url: "https://beta.appknox.com/" + secretEl.val(),
+            url: "https://beta.appknox.com/event",
             crossDomain: true,
             data: data,
             complete: function (result, status) {
