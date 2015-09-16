@@ -413,19 +413,21 @@ $(document).ready(function(){
         }
         return false;
     });
-    var hideEl = $("#ctia-hide"),
-        secretEl = $("#ctia-secret"),
-        urlEl = $("#ctia-url"),
-        emailEl = $("#ctia-email"),
-        nameEl = $("#ctia-name"),
-        appEl = $("#ctia-app");
+    var hideEl = $("#event-hide"),
+        secretEl = $("#event-secret"),
+        urlEl = $("#event-url"),
+        emailEl = $("#event-email"),
+        nameEl = $("#event-name"),
+        textEl = $("#event-text"),
+        websiteEl = $("#event-website"),
+        phoneEl = $("#event-phone");
     hideEl.click(function(){
         hideEl.hide();
         secretEl.hide();
     })
-    $("#ctia-submit").click(function(){
+    $("#event-submit").click(function(){
         var data = {
-            app: appEl.val(),
+            text: textEl.val() + "; " + websiteEl.val() + "; " + phoneEl.val(),
             email: emailEl.val(),
             name: nameEl.val(),
             uuid: secretEl.val()
@@ -440,9 +442,11 @@ $(document).ready(function(){
                 var response = JSON.parse(result.responseText)
                 console.log(response)
                 if(response.status == "success"){
-                    appEl.val("");
+                    textEl.val("");
                     emailEl.val("");
                     nameEl.val("");
+                    websiteEl.val("");
+                    phoneEl.val("");
                     alert("SUCCESS " + response.message);
                 }
                 else{
