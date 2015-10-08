@@ -239,6 +239,8 @@ $(document).ready(function(){
     }
 
     $('form.mail-list-signup').submit(function (e) {
+        trackEvent("email-homepage-signup", "submit-start");
+
         if(e.preventDefault) e.preventDefault(); else e.returnValue = false;
 
         var thisForm        = $(this).closest('.mail-list-signup'),
@@ -265,6 +267,8 @@ $(document).ready(function(){
             })
             console.log("Error");
         } else {
+            trackEvent("email-homepage-signup", "submit-sent");
+
             jQuery.ajax({
                 type: "POST",
                 url: "https://beta.appknox.com/webfrontend/homepage",
@@ -275,13 +279,16 @@ $(document).ready(function(){
                     // If this is numeric (not Swift Mailer error text) AND greater than 0 then show success message.
                     var response = JSON.parse(res.responseText)
                     if(response['status'] == 'success'){
+                            trackEvent("email-homepage-signup", "success");
+
                             thisForm.find('.signup-appstore-field').fadeOut(500);
                             thisForm.find('.signup-email-field').fadeOut(500);
                             thisForm.find('.submit-button-field').fadeOut(500);
                             thisForm.find('.form-error').fadeOut(500);
                             thisForm.find('.signup-done').fadeIn(1000);
-
                     } else {
+                        trackEvent("email-homepage-signup", "error", response['message']);
+
                         thisForm.find('.form-error').prepend(response['message']).fadeIn(1000);
                         setTimeout(function(){ window.location.reload() }, 4000);
                     }
@@ -292,6 +299,8 @@ $(document).ready(function(){
     });
 
     $('form.mail-list-subscribe').submit(function (e) {
+        trackEvent("email-list-subscribe", "submit-start");
+
         if(e.preventDefault) e.preventDefault(); else e.returnValue = false;
 
         var thisForm        = $(this).closest('.mail-list-subscribe'),
@@ -317,6 +326,7 @@ $(document).ready(function(){
             })
             console.log("Error");
         } else {
+            trackEvent("email-list-subscribe", "submit-sent");
             jQuery.ajax({
                 type: "POST",
                 url: "https://beta.appknox.com/webfrontend/subscribe",
@@ -326,9 +336,13 @@ $(document).ready(function(){
                     // If this is numeric (not Swift Mailer error text) AND greater than 0 then show success message.
                     var response = JSON.parse(res.responseText)
                     if(response['status'] == 'success'){
+                        trackEvent("email-list-subscribe", "success");
+
                         thisForm.find('.subscribe-email-field').attr("disabled", true) ;
                         thisForm.find('.subscribe-email-field').val("Thank you for subscribing !");
                     } else {
+                        trackEvent("email-list-subscribe", "error", response['message']);
+
                         thisForm.find('.submit-button-field').each(function(){
                             this.disabled = false;
                         })
@@ -344,6 +358,8 @@ $(document).ready(function(){
 
     // Contact form
     $('form.vemail-form').submit(function (e) {
+        trackEvent("email-contact", "submit-start");
+
         // return false so form submits through jQuery rather than reloading page.
         if(e.preventDefault) e.preventDefault(); else e.returnValue = false;
 
@@ -380,6 +396,8 @@ $(document).ready(function(){
             $(this).closest('.vemail-form').find('.form-error').fadeIn(200);
         }
         else{
+            trackEvent("email-contact", "submit-sent");
+
             jQuery.ajax({
                 type: "POST",
                 url: "https://beta.appknox.com/webfrontend/contact_us",
@@ -391,6 +409,8 @@ $(document).ready(function(){
                     var response = JSON.parse(result.responseText)
                     console.log(response)
                     if(response['status'] == 'success'){
+                            trackEvent("email-contact", "success");
+
                             thisForm.find('.form-success').fadeIn(1000);
                             thisForm.find('.form-error').fadeOut(500);
                             thisForm.find('.form-name').fadeOut(500);
@@ -402,6 +422,8 @@ $(document).ready(function(){
                     }
                     // If error text was returned, put the text in the .form-error div and show it.
                     else{
+                        trackEvent("email-contact", "error", response['message']);
+
                         // Keep the current error text in a data attribute on the form
                         thisForm.find('.form-error').attr('original-error', thisForm.find('.form-error').text());
                         // Show the error with the returned error text.
@@ -590,6 +612,12 @@ $(window).load(function(){
 
 
 });
+
+var _gaq = _gaq || [];
+
+function trackEvent(category, action, opt_label, opt_value, opt_noninteraction) {
+    _gaq.push(['_trackEvent', category, action, opt_label, opt_value, opt_noninteraction]);
+}
 
 function handleTweets(tweets){
           var x = tweets.length;
