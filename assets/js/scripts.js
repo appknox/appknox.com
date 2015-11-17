@@ -13,7 +13,6 @@ $(document).ready(function(){
     });
 
     // Offscreen Nav
-
     $('.offscreen-toggle').click(function(){
         $('.main-container').toggleClass('reveal-nav');
         $('.offscreen-container').toggleClass('reveal-nav');
