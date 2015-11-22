@@ -1,3 +1,5 @@
 _site
 .sass-cache
 build/
+.ruby-version
+.jekyll-metadata
