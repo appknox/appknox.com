@@ -112,31 +112,6 @@ nav{max-height:700px;}
 	background-color:rgba(80,80,80,0.4) !important ;
 }
 
-.an-blog-tile{
-	margin-bottom:30px;
-}
-
-.an-blog-title{
-	border-bottom: 1px solid #efefef;
-	padding: 0 0 9px 0;
-	margin-bottom: 15px;
-}
-
-.an-blog-tile .btn{
-	background: #fff;
-	border: 1px solid #fc4349;
-	color:#666;
-	border-radius:4px;
-	font-size: 1.2em;
-	padding: 10px 20px;
-	margin-top:20px;
-	transition:color 0.3s ease-out;
-}
-
-.an-blog-tile .btn:hover{
-	color:#fc4349;
-}
-
 @media all and (max-width: 1000px) {
 	#an-header .container{
 		width:97%;
