@@ -97,6 +97,21 @@ nav{max-height:700px;}
 	display: none !important;
 }
 
+.img_border {
+	transition : border-radius 0.4s ease-out;
+}
+
+
+.img_border:hover {
+    border-radius:15px;
+}
+
+.an-text-block{
+	color:#cfcfcf  !important;
+	padding:30px 20px  !important;
+	background-color:rgba(80,80,80,0.4) !important ;
+}
+
 @media all and (max-width: 1000px) {
 	#an-header .container{
 		width:97%;
