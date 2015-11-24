@@ -109,6 +109,15 @@ nav{max-height:700px;}
 	background-color:rgba(80,80,80,0.4) !important ;
 }
 
+.an-inline-block{
+	display: inline-block !important;
+}
+
+.an-vertical-middle{vertical-align: middle}
+
+.an-float-none{float:none;}
+
+
 @media all and (max-width: 1000px) {
 	#an-header .container{
 		width:97%;
@@ -144,5 +153,9 @@ nav{max-height:700px;}
 
 	.an-mobile-none{
 		display:none !important;
+	}
+
+	.an-team-center .an-inline-block{
+		display: block !important;
 	}
 }
