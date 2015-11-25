@@ -479,6 +479,64 @@ $(document).ready(function(){
             }
         });
     });
+
+    //Insert Latest Post For Home Page
+    
+    var appknoxBlogRSSLink = "https://blog.appknox.com/feed/";
+    var blogPostSections = $(".blog-post-block"); 
+    var pubDatePrefix = "Published on "
+    
+    if(blogPostSections.length > 0){
+      insertBlogPosts();
+    }
+
+    function insertBlogPosts(){
+        $.get(appknoxBlogRSSLink, function(data) {
+            var $XML = $(data);
+            var blogPosts = $XML.find("item");
+            var iterationLimit = Math.min(blogPosts.length,3);
+            
+            if(blogPosts.length > 0){
+                $(".latest-post-block").removeClass("an-none");
+            }
+
+            for(var i = 0;i < iterationLimit; i++){
+                
+                var  newBlogTile = $("#dummy-an-blog-tile").clone();
+                var blog = $(blogPosts[i]);
+
+                var item = {
+                    title:       blog.find("title").text(),
+                    link:        blog.find("link").text(),
+                    description: blog.find("description").text(),
+                    pubDate:     blog.find("pubDate").text(),
+                    author:      blog.find("author").text()
+                };
+
+                var pubDate = item.pubDate.substr(0,item.pubDate.length - 15);
+                
+                var descHTML = $(blog.find("description").text()).find("img");
+                var src = "";
+                try{    
+                    src = $.parseHTML(blog.find("description").text())[0].src;
+                }catch(ex){
+                    //do nothing
+                }
+
+                newBlogTile.find(".an-blog-title").html(item.title);
+                newBlogTile.find(".an-blog-publish-date").html(pubDatePrefix + pubDate);
+                newBlogTile.find(".an-blog-description").html(item.description);
+                newBlogTile.find(".an-blog-link").attr("href",item.link);
+                newBlogTile.find(".an-blog-post-img").attr("src",src);
+
+                newBlogTile.find(".an-blog-description img").remove();
+                newBlogTile.removeClass("an-none");
+                blogPostSections.append(newBlogTile);
+
+            }
+        });
+    }
+
 });
 
 $(window).load(function(){
