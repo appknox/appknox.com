@@ -12,3 +12,5 @@ github_username:  appknox
 markdown: kramdown
 gems:
   - jekyll-sitemap
+exclude:
+  - build/
